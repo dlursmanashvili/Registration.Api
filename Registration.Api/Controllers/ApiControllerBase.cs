@@ -5,8 +5,8 @@ using Registration.Repository.Data;
 
 namespace Registration.Api.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
+//[ApiController]
+//[Route("api/[controller]")]
 public class ApiControllerBase<TModel> : ControllerBase where TModel : class
 {
     protected readonly IServiceRepositoryBase<TModel> _serviceBase;

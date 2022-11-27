@@ -15,9 +15,9 @@ IConfiguration configuration = new ConfigurationBuilder()
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
-builder.Services.AddSingleton<RegistrationContext>()
+builder.Services.AddDbContext<RegistrationContext>()
     .Configure<RepositoryOption>(x => x.ConnectionString = configuration.GetConnectionString("Default"));
-//DBHelper.CreateDatabase();
+DBHelper.CreateDatabase();
 builder.Services.AddScoped<IRegistrationRepository, RegistrationRepository>();
 builder.Services.AddScoped(typeof(IServiceRepositoryBase<RegistrationDto>),typeof(ServiceRepositoryBase<RegistrationDto>));
 builder.Services.AddScoped(typeof(IRepositoryBase<RegistrationDto>),typeof(RepositoryBase<RegistrationDto>));
