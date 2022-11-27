@@ -29,11 +29,10 @@ public class RegistrationControllers : ApiControllerBase<RegistrationDto>
         await _serviceBase.UpdateAsync(registrationDto);
     }
 
-    //[HttpPost]
-    //[Route("remove")]
-    //public async Task RemoveAsync(RegistrationDto registrationDto)
-    //{
-    //    await _serviceBase.RemoveAsync(registrationDto);
-    //}
+    [HttpPost("{id}")]
+    public async Task RemoveById(int id)
+    {
+        await _serviceBase.RemoveById(id);
+    }
 
 }

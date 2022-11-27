@@ -38,4 +38,10 @@ public class RepositoryBase<TModel> : IRepositoryBase<TModel> where TModel : cla
         _table.Remove(entity);
         await _context.SaveChangesAsync();
     }
+
+    public virtual async Task RemoveById(object id)
+    {
+        _table.Remove(_table.Find(id)!);
+        await _context.SaveChangesAsync();
+    }
 }

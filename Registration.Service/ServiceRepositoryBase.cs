@@ -21,4 +21,7 @@ public class ServiceRepositoryBase<TModel> : ServiceBase<TModel>, IServiceReposi
     public virtual async Task UpdateAsync(TModel entity) => await _repository.UpdateAsync(entity);
 
     public virtual async Task RemoveAsync(TModel entity) => await _repository.RemoveAsync(entity);
+
+    public virtual async Task RemoveById(object id) => await _repository.RemoveById(id);
+
 }

@@ -13,4 +13,6 @@ public interface IServiceRepositoryBase<TModel> : IServiceBase<TModel> where TMo
     Task<TModel> GetByIdAsync(object id);
     Task UpdateAsync(TModel entity);
     Task RemoveAsync(TModel entity);
+    Task RemoveById(object id);
+
 }

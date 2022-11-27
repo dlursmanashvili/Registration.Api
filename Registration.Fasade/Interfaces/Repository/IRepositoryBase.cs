@@ -7,4 +7,7 @@ public interface IRepositoryBase<TModel> where TModel : class
     Task<IEnumerable<TModel>> LoadAsync();
     Task RemoveAsync(TModel entity);
     Task UpdateAsync(TModel entity);
+    Task RemoveById(object id);
+
+    
 }
